@@ -11,7 +11,16 @@
  * delayedReminder("Time to stretch!", 3000).then(() => console.log("Reminder done."));
  */
 function delayedReminder(message, delay) {
+  return new Promise((resolve) => {  // Return a promise
+    setTimeout(() => {  // Use setTimeout to log the message after the specified delay
+      console.log(message);
+      resolve();  // Resolve the promise once the message is logged
+    }, delay);
+  });
+}
+
+module.exports = { delayedReminder };
   // Return a promise
   // Use setTimeout to log the message after the specified delay
   // Resolve the promise once the message is logged
-}
+
